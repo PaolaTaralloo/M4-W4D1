@@ -1,0 +1,32 @@
+.imgLogo{
+    width: 4em;
+    margin-right: 2em;
+}
+
+#jumbotron{
+    background-color: rgb(217, 183, 13);
+    height: 45vh;
+}
+
+.textJumb p{
+    font-size: 1.5em !important;
+}
+
+#duckArea{
+    margin-bottom: 10em !important;
+}
+
+.card{
+    padding: 0;
+}
+
+.card-img-top{
+    max-height: 20em;
+    object-fit: cover;
+}
+
+#footer{
+    height: 5em;
+    background-color: rgb(217, 183, 13);
+}
+

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DuckShop</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="custom.css">
+</head>
+
+<body class="bg-secondary">
+    <!-- Nav area -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary px-4" data-bs-theme="dark">
+        <div class="container-fluid">
+            <img class="imgLogo" src="assets/duckshop_logo.png" alt="duck-shop-logo">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/backoffice.html">Backoffice</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" id="searchInput" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Search area -->
+        <div class="alert alert-warning d-none" role="alert" id="alertMsg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+              </svg>
+            <span>Devi inserire tutti e 5 i campi obbligatori!</span>
+        </div>
+
+        <div class="alert alert-success d-none" role="alert" id="editMsg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+              </svg>
+            <span>Post modificato con successo!</span>
+        </div>
+
+
+        <div class="container my-4 bg-dark p-3 d-flex align-items-center justify-content-center">
+            <div class="row gy-3">
+                <div class="col-md-3">
+                    <input type="text" id="post-name" placeholder="Post name" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    <input type="text" id="post-brand" placeholder="Post brand" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    <input type="text" id="post-description" placeholder="Post description" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    <input type="number" placeholder="Post price" id="post-price" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-success btn" onclick="editPost()">Edit post</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+        
+    
+    <script src="editPost.js"></script>
+    
+</body>
+
+</html>
