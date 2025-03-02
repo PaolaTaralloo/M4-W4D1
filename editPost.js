@@ -17,7 +17,12 @@ const duckId = params.get('duckId');
 //FETCH CON FUNZIONE ASYNC PER RECUEPRARE I DATI (GET)
 async function getPost() {
     try {
-        const response = await fetch (duckLink + '/' + duckId)
+        const response = await fetch (duckLink + '/' + duckId, {
+            headers: {
+                 Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JlMGU2YTFlMTQwNjAwMTUzMTRkNmQiLCJpYXQiOjE3NDA1MDg3NzgsImV4cCI6MTc0MTcxODM3OH0.tgfIcx0LcNP-5vlOg-iZiRqlDgUNdReXN38NVmvIloQ",
+                 "content-Type": "application/json"
+            }
+        })
         const duck = await response.json()
 
         console.log(duck)
