@@ -55,12 +55,29 @@ function createRow({_id, name, brand, description, price }) {
         window.location.href =`editPost.html?duckId=${_id}`;
     });
 
+    // const removeBtn = document.createElement("a")
+    // removeBtn.classList.add("btn", "btn-danger")
+    // removeBtn.innerHTML = `<i class="bi bi-trash3-fill"></i>`
+    // removeBtn.addEventListener("click", () =>{
+    //     deletePost(_id)
+    // })
+
     const removeBtn = document.createElement("a")
-    removeBtn.classList.add("btn", "btn-danger")
+    removeBtn.classList.add("btn", "btn-danger", )
     removeBtn.innerHTML = `<i class="bi bi-trash3-fill"></i>`
-    removeBtn.addEventListener("click", () =>{
-        deletePost(_id)
-    })
+    removeBtn.addEventListener("click", () => {
+        // Mostra il modale di conferma
+        const confirmModal = new bootstrap.Modal(document.getElementById('confirmModal'));
+        confirmModal.show();
+
+        // Quando si clicca su "Elimina", esegui la funzione di eliminazione
+        const confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
+        confirmDeleteBtn.addEventListener("click", async () => {
+            await deletePost(_id); // Elimina il prodotto
+            confirmModal.hide(); // Nascondi il modale
+        });
+    });
+
 
     cellActions.append(editBtn, removeBtn)
     tableRow.append(cellName, cellBrand, cellDescription, cellPrice, cellActions);
